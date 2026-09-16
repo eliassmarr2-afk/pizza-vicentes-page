@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Producto | Pizza Vicente</title>
+  <meta name="description" content="Detalle de producto de Pizza Vicente">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <main class="app-shell product-page">
+    <section class="hero-gallery" aria-label="Galería del producto">
+      <div id="heroTrack" class="hero-track"></div>
+      <div id="galleryDots" class="gallery-dots"></div>
+    </section>
+
+    <section class="section product-head">
+      <a href="index.html" class="muted">← Volver</a>
+      <div id="productBadges" class="badges"></div>
+      <h1 id="productTitle"></h1>
+      <p id="productSubtitle" class="lead"></p>
+      <p id="productDescription" class="muted"></p>
+      <div id="productPrice" class="product-price"></div>
+    </section>
+
+    <section class="section">
+      <div class="scheduler">
+        <div class="scheduler-note">Programá tu envío para un rango horario de preferencia</div>
+        <div class="scheduler-grid">
+          <div class="field">
+            <label for="deliveryDay">Día</label>
+            <select id="deliveryDay">
+              <option value="today">Hoy</option>
+              <option value="custom">Elegir día</option>
+            </select>
+          </div>
+          <div id="customDateField" class="field" hidden>
+            <label for="deliveryDate">Fecha</label>
+            <input id="deliveryDate" type="date">
+          </div>
+          <div class="field">
+            <label for="deliveryTime">Horario</label>
+            <select id="deliveryTime">
+              <option value="">Seleccionar horario</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="matchingOfferSection" class="section" hidden>
+      <h2 class="section-title">Mejorá tu pedido</h2>
+      <div id="matchingOffer"></div>
+    </section>
+
+    <section id="extrasSection" class="section" hidden>
+      <h2 class="section-title">Agregá a tu pedido</h2>
+      <div id="extrasList" class="upsell-list"></div>
+    </section>
+
+    <section id="dessertsSection" class="section" hidden>
+      <h2 class="section-title">Disfrutá de un postre</h2>
+      <div id="dessertsList" class="upsell-list"></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Aclaraciones</h2>
+      <div class="note-box">
+        <textarea id="orderNote" placeholder="Ejemplo: sin orégano, sin cebolla"></textarea>
+      </div>
+    </section>
+  </main>
+
+  <aside class="sticky-summary" aria-label="Resumen de compra">
+    <div class="sticky-card">
+      <div class="sticky-top">
+        <div>
+          <div id="stickyTitle" class="sticky-title"></div>
+          <div id="stickyLine" class="sticky-line"></div>
+        </div>
+        <div>
+          <div id="stickyEta" class="sticky-title">Llega en 45 min</div>
+          <div id="stickyPrice" class="sticky-title"></div>
+        </div>
+      </div>
+      <div class="sticky-actions">
+        <button id="decreaseBtn" class="button ghost" type="button">−</button>
+        <button id="increaseBtn" class="button ghost" type="button">+</button>
+        <button id="primaryAction" class="button" type="button"></button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="detailSheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <div class="sheet-panel">
+      <div class="close-row">
+        <div>
+          <h2 id="detailTitle">Detalle</h2>
+          <p id="detailSubtitle" class="muted"></p>
+        </div>
+        <button class="close-button" data-close="detailSheet" aria-label="Cerrar">×</button>
+      </div>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+  <div id="emptyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="emptyTitle">
+    <div class="modal-panel">
+      <h2 id="emptyTitle">¿Vaciar tu compra?</h2>
+      <p class="muted">Se perderán los artículos que seleccionaste.</p>
+      <div class="modal-actions">
+        <button class="button ghost" data-close="emptyModal" type="button">Cancelar</button>
+        <button id="confirmEmpty" class="button" type="button">Vaciar compra</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script type="module" src="assets/js/product.js"></script>
+</body>
+</html>
