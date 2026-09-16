@@ -184,12 +184,6 @@ function setup() {
   });
 
   $('#decreaseBtn').addEventListener('click', () => {
-    if (state.quantity > 1) {
-      state.quantity -= 1;
-      state.added = false;
-      updateSticky();
-      return;
-    }
     openLayer('emptyModal');
   });
 
