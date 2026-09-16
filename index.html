@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Pizza Vicente</title>
+  <meta name="description" content="Pizza Vicente — pedidos online">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <img id="coverImage" class="cover" alt="Portada de Pizza Vicente">
+
+    <section class="profile-block">
+      <img id="profileImage" class="profile-image" alt="Perfil de Pizza Vicente">
+      <div class="profile-copy">
+        <h1 id="businessName">Pizza Vicente</h1>
+        <p>Pizzas, empanadas y combos para pedir al paso.</p>
+      </div>
+    </section>
+
+    <div class="segmented" aria-label="Modalidad del pedido">
+      <button class="active" data-mode="delivery">Delivery</button>
+      <button data-mode="pickup">Retirar en el local</button>
+    </div>
+
+    <section class="section info-stack">
+      <button id="locationTrigger" class="info-card" type="button">
+        <span>
+          <strong>Enviar a</strong>
+          <span id="locationLabel">Completá tu dirección de envío</span>
+        </span>
+        <span class="arrow">›</span>
+      </button>
+
+      <button id="registerTrigger" class="info-card promo" type="button">
+        <span>
+          <strong id="registerBenefit">$7.000 OFF por registrarte</strong>
+          <span>Creá tu cuenta para acceder a beneficios.</span>
+        </span>
+        <span class="arrow">›</span>
+      </button>
+    </section>
+
+    <div class="banner-wrap">
+      <img id="promoBanner" class="banner" alt="Promoción de Pizza Vicente">
+    </div>
+
+    <nav class="tabs-wrap" aria-label="Categorías">
+      <div id="tabs" class="tabs"></div>
+    </nav>
+
+    <div id="tabPanels"></div>
+  </main>
+
+  <div id="locationSheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="locationTitle">
+    <div class="sheet-panel">
+      <div class="close-row">
+        <div>
+          <h2 id="locationTitle">Ubicación necesaria</h2>
+          <p class="muted">Ingresá tu código postal y dirección.</p>
+        </div>
+        <button class="close-button" data-close="locationSheet" aria-label="Cerrar">×</button>
+      </div>
+      <div class="sheet-grid">
+        <div class="field">
+          <label for="postalCode">Código postal</label>
+          <input id="postalCode" inputmode="numeric" autocomplete="postal-code" placeholder="Ej. 1425">
+        </div>
+        <div class="field">
+          <label for="address">Dirección</label>
+          <input id="address" autocomplete="street-address" placeholder="Ej. Av. Santa Fe 3253">
+        </div>
+      </div>
+      <button id="useAddress" class="button" type="button">Utilizar dirección</button>
+    </div>
+  </div>
+
+  <div id="registerSheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+    <div class="sheet-panel">
+      <div class="close-row">
+        <div>
+          <h2 id="registerTitle">Registrate</h2>
+          <p class="muted">La conexión real de cuenta se incorporará con Shopify.</p>
+        </div>
+        <button class="close-button" data-close="registerSheet" aria-label="Cerrar">×</button>
+      </div>
+      <p>La V1 conserva este punto de entrada para que la autenticación futura pueda enchufarse sin rediseñar la página.</p>
+      <button class="button" type="button" data-close="registerSheet">Entendido</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script type="module" src="assets/js/home.js"></script>
+</body>
+</html>
