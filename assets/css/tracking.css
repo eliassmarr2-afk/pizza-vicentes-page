@@ -8,7 +8,7 @@
   min-height: 190px;
   max-height: 250px;
   overflow: hidden;
-  background: #d84a2b;
+  background: #0f2346;
 }
 
 .delivery-scene {
@@ -18,18 +18,22 @@
 }
 
 .scene-building {
-  animation: building-slide 5.6s linear infinite;
+  animation: building-slide 6s linear infinite;
+}
+
+.scene-building.secondary {
+  animation-delay: -3s;
 }
 
 .delivery-bike {
   transform-origin: center;
-  animation: bike-bob .7s ease-in-out infinite alternate;
+  animation: bike-bob .75s ease-in-out infinite alternate;
 }
 
 .delivery-wheel {
   transform-box: fill-box;
   transform-origin: center;
-  animation: wheel-spin .65s linear infinite;
+  animation: wheel-spin .6s linear infinite;
 }
 
 .road-dash {
@@ -42,8 +46,8 @@
 }
 
 @keyframes bike-bob {
-  from { transform: translate(282px, 72px); }
-  to { transform: translate(282px, 69px); }
+  from { transform: translate(254px, 76px); }
+  to { transform: translate(254px, 73px); }
 }
 
 @keyframes wheel-spin {
@@ -55,15 +59,22 @@
   to { transform: translateX(-70px); }
 }
 
-.verification-strip {
+.verification-wrap {
   display: flex;
+  justify-content: center;
+  padding: 14px 16px 2px;
+}
+
+.verification-strip {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 54px;
-  padding: 10px 16px;
-  background: #f4b942;
-  color: #3c2a04;
+  min-height: 52px;
+  padding: 12px 18px;
+  background: #e9edf1;
+  color: #3c4651;
+  border-radius: 10px;
   font-size: .88rem;
   font-weight: 800;
   text-align: center;
@@ -74,6 +85,7 @@
   font-size: 1.06rem;
   font-weight: 950;
   white-space: nowrap;
+  color: #1f2c3b;
 }
 
 .tracking-content {
@@ -86,7 +98,7 @@
   border: 0;
   border-radius: 10px;
   box-shadow: none;
-  background: #f7f7f7;
+  background: #eef1f4;
   padding: 16px;
 }
 
@@ -122,7 +134,7 @@
 
 .timeline::before {
   bottom: 20px;
-  background: #d9d9d9;
+  background: #d4dbe3;
 }
 
 .timeline::after {
@@ -150,8 +162,8 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: #dedede;
-  color: #777;
+  background: #d7dfe6;
+  color: #6d7782;
 }
 
 .timeline-icon svg {
@@ -209,7 +221,7 @@
 }
 
 .order-item + .order-item {
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid #dce2e8;
 }
 
 .order-item-title {
@@ -234,7 +246,7 @@
   gap: 12px;
   margin-top: 8px;
   padding-top: 13px;
-  border-top: 1px solid #dedede;
+  border-top: 1px solid #d7dee5;
   font-weight: 950;
 }
 
@@ -268,7 +280,7 @@
   min-height: 48px;
   padding: 0;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #dde3e8;
   background: transparent;
   color: #222;
   text-align: left;
@@ -287,7 +299,7 @@
 
 .tracking-kicker {
   margin: 0 0 4px;
-  color: #a9341f;
+  color: #7f8fa3;
   font-size: .75rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -298,6 +310,19 @@
   margin: 0;
   color: #6e6e6e;
   font-size: .78rem;
+}
+
+@media (max-width: 520px) {
+  .verification-strip {
+    width: 100%;
+    gap: 8px;
+    padding: 12px 14px;
+    flex-wrap: wrap;
+  }
+
+  .verification-code {
+    letter-spacing: .26em;
+  }
 }
 
 @media (min-width: 720px) {
@@ -320,6 +345,6 @@
   }
 
   .delivery-bike {
-    transform: translate(282px, 72px);
+    transform: translate(254px, 76px);
   }
 }
