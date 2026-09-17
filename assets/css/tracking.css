@@ -21,10 +21,6 @@
   animation: building-slide 5.6s linear infinite;
 }
 
-.scene-building.secondary {
-  animation-delay: -2.8s;
-}
-
 .delivery-bike {
   transform-origin: center;
   animation: bike-bob .7s ease-in-out infinite alternate;
@@ -46,8 +42,8 @@
 }
 
 @keyframes bike-bob {
-  from { transform: translateY(0); }
-  to { transform: translateY(-3px); }
+  from { transform: translate(282px, 72px); }
+  to { transform: translate(282px, 69px); }
 }
 
 @keyframes wheel-spin {
@@ -321,5 +317,9 @@
   .road-dash,
   .timeline-item.active .timeline-icon {
     animation: none;
+  }
+
+  .delivery-bike {
+    transform: translate(282px, 72px);
   }
 }
