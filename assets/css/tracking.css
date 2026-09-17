@@ -6,9 +6,9 @@
   position: relative;
   height: 25vh;
   min-height: 190px;
-  max-height: 250px;
+  max-height: 260px;
   overflow: hidden;
-  background: #0f2346;
+  background: #f3f0ed;
 }
 
 .delivery-scene {
@@ -17,52 +17,69 @@
   display: block;
 }
 
-.scene-building {
-  animation: building-slide 6s linear infinite;
+.city-layer-back {
+  animation: city-back-slide 10s linear infinite;
 }
 
-.scene-building.secondary {
-  animation-delay: -3s;
+.city-layer-front {
+  animation: city-front-slide 7s linear infinite;
 }
 
-.delivery-bike {
+.road-dashes {
+  animation: road-slide 1.15s linear infinite;
+}
+
+.scooter-motion {
   transform-origin: center;
-  animation: bike-bob .75s ease-in-out infinite alternate;
+  animation: scooter-bob .72s ease-in-out infinite alternate;
 }
 
-.delivery-wheel {
+.scooter-wheel {
   transform-box: fill-box;
   transform-origin: center;
-  animation: wheel-spin .6s linear infinite;
+  animation: wheel-spin .65s linear infinite;
 }
 
-.road-dash {
-  animation: road-move 1s linear infinite;
+.scooter-smoke {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: smoke-drift 1.4s ease-out infinite;
 }
 
-@keyframes building-slide {
+@keyframes city-back-slide {
   from { transform: translateX(0); }
-  to { transform: translateX(-360px); }
+  to { transform: translateX(-72px); }
 }
 
-@keyframes bike-bob {
-  from { transform: translate(254px, 76px); }
-  to { transform: translate(254px, 73px); }
+@keyframes city-front-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-92px); }
+}
+
+@keyframes road-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-86px); }
+}
+
+@keyframes scooter-bob {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3px); }
 }
 
 @keyframes wheel-spin {
   to { transform: rotate(360deg); }
 }
 
-@keyframes road-move {
-  from { transform: translateX(0); }
-  to { transform: translateX(-70px); }
+@keyframes smoke-drift {
+  0% { opacity: .15; transform: translate(0,0) scale(.8); }
+  45% { opacity: .5; }
+  100% { opacity: 0; transform: translate(20px,-8px) scale(1.2); }
 }
 
 .verification-wrap {
   display: flex;
   justify-content: center;
-  padding: 14px 16px 2px;
+  padding: 14px 16px 4px;
 }
 
 .verification-strip {
@@ -72,8 +89,8 @@
   gap: 10px;
   min-height: 52px;
   padding: 12px 18px;
-  background: #e9edf1;
-  color: #3c4651;
+  background: #ece9e7;
+  color: #343236;
   border-radius: 10px;
   font-size: .88rem;
   font-weight: 800;
@@ -85,7 +102,7 @@
   font-size: 1.06rem;
   font-weight: 950;
   white-space: nowrap;
-  color: #1f2c3b;
+  color: #242327;
 }
 
 .tracking-content {
@@ -98,7 +115,7 @@
   border: 0;
   border-radius: 10px;
   box-shadow: none;
-  background: #eef1f4;
+  background: #ecebea;
   padding: 16px;
 }
 
@@ -134,7 +151,7 @@
 
 .timeline::before {
   bottom: 20px;
-  background: #d4dbe3;
+  background: #d3d1d0;
 }
 
 .timeline::after {
@@ -162,8 +179,8 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: #d7dfe6;
-  color: #6d7782;
+  background: #d7d5d4;
+  color: #77736f;
 }
 
 .timeline-icon svg {
@@ -204,7 +221,7 @@
 
 .timeline-copy span {
   display: block;
-  color: #6e6e6e;
+  color: #6e6b69;
   font-size: .82rem;
   line-height: 1.4;
 }
@@ -221,7 +238,7 @@
 }
 
 .order-item + .order-item {
-  border-top: 1px solid #dce2e8;
+  border-top: 1px solid #d6d3d1;
 }
 
 .order-item-title {
@@ -230,7 +247,7 @@
 }
 
 .order-item-components {
-  color: #6e6e6e;
+  color: #6e6b69;
   font-size: .82rem;
   line-height: 1.4;
 }
@@ -246,7 +263,7 @@
   gap: 12px;
   margin-top: 8px;
   padding-top: 13px;
-  border-top: 1px solid #d7dee5;
+  border-top: 1px solid #d2cfcd;
   font-weight: 950;
 }
 
@@ -261,7 +278,7 @@
 }
 
 .destination-row span {
-  color: #6e6e6e;
+  color: #77736f;
   font-size: .76rem;
 }
 
@@ -280,7 +297,7 @@
   min-height: 48px;
   padding: 0;
   border: 0;
-  border-bottom: 1px solid #dde3e8;
+  border-bottom: 1px solid #d7d4d2;
   background: transparent;
   color: #222;
   text-align: left;
@@ -289,17 +306,17 @@
 
 .help-action:last-child {
   border-bottom: 0;
-  color: #a9341f;
+  color: #7b5550;
 }
 
 .help-action .arrow {
-  color: #d84a2b;
+  color: #7f7a76;
   font-size: 1.15rem;
 }
 
 .tracking-kicker {
   margin: 0 0 4px;
-  color: #7f8fa3;
+  color: #8a6d63;
   font-size: .75rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -308,7 +325,7 @@
 
 .tracking-order-id {
   margin: 0;
-  color: #6e6e6e;
+  color: #77736f;
   font-size: .78rem;
 }
 
@@ -331,20 +348,18 @@
   }
 
   .tracking-hero {
-    max-height: 270px;
+    max-height: 280px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scene-building,
-  .delivery-bike,
-  .delivery-wheel,
-  .road-dash,
+  .city-layer-back,
+  .city-layer-front,
+  .road-dashes,
+  .scooter-motion,
+  .scooter-wheel,
+  .scooter-smoke,
   .timeline-item.active .timeline-icon {
     animation: none;
-  }
-
-  .delivery-bike {
-    transform: translate(254px, 76px);
   }
 }
