@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Seguir pedido | Pizza Vicente</title>
+  <meta name="description" content="Seguimiento de pedido de Pizza Vicente">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+  <link rel="stylesheet" href="assets/css/tracking.css">
+</head>
+<body>
+  <button id="menuToggle" class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteMenu">
+    <span></span><span></span><span></span>
+  </button>
+  <div id="menuOverlay" class="menu-overlay"></div>
+  <aside id="siteMenu" class="menu-drawer" aria-hidden="true">
+    <div class="menu-brand">Pizza Vicente</div>
+    <nav class="menu-nav" aria-label="Menú principal">
+      <a class="menu-link" href="index.html"><span>Inicio</span><span class="menu-arrow">›</span></a>
+      <a class="menu-link" href="index.html#tabs"><span>Comidas</span><span class="menu-arrow">›</span></a>
+      <a class="menu-link" href="seguimiento.html" aria-current="page"><span>Seguir pedido</span><span class="menu-arrow">›</span></a>
+      <a class="menu-link" href="#" data-menu-placeholder="Soporte"><span>Soporte</span><span class="menu-arrow">›</span></a>
+    </nav>
+    <p class="menu-footnote">Navegación V1. Las conexiones de cuenta, logística y soporte se incorporarán en las siguientes etapas.</p>
+  </aside>
+
+  <main class="app-shell tracking-page">
+    <section class="tracking-hero" aria-label="Tu pedido está en camino">
+      <svg class="delivery-scene" viewBox="0 0 760 240" role="img" aria-label="Repartidor en moto llevando el pedido">
+        <rect width="760" height="240" fill="#d84a2b"/>
+        <circle cx="650" cy="48" r="24" fill="#f4b942" opacity=".95"/>
+
+        <g opacity=".22" fill="#fff">
+          <g class="scene-building">
+            <rect x="0" y="74" width="62" height="106" rx="6"/>
+            <rect x="78" y="98" width="52" height="82" rx="6"/>
+            <rect x="146" y="54" width="72" height="126" rx="6"/>
+            <rect x="234" y="88" width="58" height="92" rx="6"/>
+            <rect x="306" y="68" width="54" height="112" rx="6"/>
+          </g>
+          <g class="scene-building secondary">
+            <rect x="360" y="74" width="62" height="106" rx="6"/>
+            <rect x="438" y="98" width="52" height="82" rx="6"/>
+            <rect x="506" y="54" width="72" height="126" rx="6"/>
+            <rect x="594" y="88" width="58" height="92" rx="6"/>
+            <rect x="666" y="68" width="54" height="112" rx="6"/>
+          </g>
+        </g>
+
+        <rect y="180" width="760" height="60" fill="#a9341f"/>
+        <g fill="#f4b942" opacity=".9">
+          <rect class="road-dash" x="10" y="207" width="48" height="5" rx="3"/>
+          <rect class="road-dash" x="92" y="207" width="48" height="5" rx="3"/>
+          <rect class="road-dash" x="174" y="207" width="48" height="5" rx="3"/>
+          <rect class="road-dash" x="256" y="207" width="48" height="5" rx="3"/>
+          <rect class="road-dash" x="338" y="207" width="48" height="5" rx="3"/>
+          <rect class="road-dash" x="420" y="207" width="48" height="5" rx="3"/>
+          <rect class="road-dash" x="502" y="207" width="48" height="5" rx="3"/>
+          <rect class="road-dash" x="584" y="207" width="48" height="5" rx="3"/>
+          <rect class="road-dash" x="666" y="207" width="48" height="5" rx="3"/>
+        </g>
+
+        <g class="delivery-bike" transform="translate(282 72)">
+          <g class="delivery-wheel">
+            <circle cx="62" cy="115" r="26" fill="#222"/>
+            <circle cx="62" cy="115" r="13" fill="#fff7f0"/>
+            <path d="M62 92v46M39 115h46M46 99l32 32M78 99l-32 32" stroke="#d84a2b" stroke-width="3"/>
+          </g>
+          <g class="delivery-wheel">
+            <circle cx="202" cy="115" r="26" fill="#222"/>
+            <circle cx="202" cy="115" r="13" fill="#fff7f0"/>
+            <path d="M202 92v46M179 115h46M186 99l32 32M218 99l-32 32" stroke="#d84a2b" stroke-width="3"/>
+          </g>
+
+          <path d="M62 112h72l25-38h38l15 38h-20l-12-22h-28l-18 30H86Z" fill="#f4b942"/>
+          <path d="M125 81h42l12 12h-58Z" fill="#fff7f0"/>
+          <rect x="44" y="48" width="70" height="52" rx="8" fill="#fff7f0"/>
+          <rect x="52" y="56" width="54" height="36" rx="5" fill="#f4b942"/>
+          <path d="M67 76h24" stroke="#a9341f" stroke-width="5" stroke-linecap="round"/>
+
+          <circle cx="151" cy="36" r="16" fill="#f5c7a9"/>
+          <path d="M136 34c3-16 28-19 35-3h-36Z" fill="#222"/>
+          <path d="M150 51 132 84h43l-9-34Z" fill="#fff7f0"/>
+          <path d="m145 65-20 30M162 65l24 19" stroke="#f5c7a9" stroke-width="8" stroke-linecap="round"/>
+          <path d="M180 84h20" stroke="#222" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="160" cy="34" r="2" fill="#222"/>
+        </g>
+      </svg>
+    </section>
+
+    <div class="verification-strip">
+      <span>Entregá el código al repartidor</span>
+      <span aria-hidden="true">|</span>
+      <strong id="verificationCode" class="verification-code">1 1 4 9</strong>
+    </div>
+
+    <div class="tracking-content">
+      <section class="tracking-card" aria-labelledby="statusTitle">
+        <p class="tracking-kicker">Seguimiento en vivo</p>
+        <h1 id="statusTitle">Estado de tu orden</h1>
+        <p id="orderId" class="tracking-order-id"></p>
+        <div id="orderTimeline" class="timeline"></div>
+      </section>
+
+      <section class="tracking-card" aria-labelledby="detailTitle">
+        <h2 id="detailTitle">Detalle</h2>
+        <div id="orderItems"></div>
+        <div class="order-total"><span>Total</span><strong id="orderTotal"></strong></div>
+      </section>
+
+      <section class="tracking-card" aria-labelledby="destinationTitle">
+        <h2 id="destinationTitle">Destino y datos</h2>
+        <div class="destination-grid">
+          <div class="destination-row"><span>Domicilio</span><strong id="destinationAddress"></strong></div>
+          <div class="destination-row"><span>Referencia</span><strong id="destinationReference"></strong></div>
+          <div class="destination-row"><span>Recibe</span><strong id="customerName"></strong></div>
+          <div class="destination-row"><span>Teléfono</span><strong id="customerPhone"></strong></div>
+        </div>
+      </section>
+
+      <section class="tracking-card" aria-labelledby="helpTitle">
+        <h2 id="helpTitle">Ayuda</h2>
+        <div class="help-list">
+          <button class="help-action" type="button" data-help-action="address"><span>Cambiar domicilio</span><span class="arrow">›</span></button>
+          <button class="help-action" type="button" data-help-action="store"><span>Contactar al local</span><span class="arrow">›</span></button>
+          <button class="help-action" type="button" data-help-action="courier"><span>Chatear con el repartidor</span><span class="arrow">›</span></button>
+          <button class="help-action" type="button" data-help-action="cancel"><span>Cancelar entrega</span><span class="arrow">›</span></button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script type="module" src="assets/js/menu.js"></script>
+  <script type="module" src="assets/js/tracking.js"></script>
+</body>
+</html>
