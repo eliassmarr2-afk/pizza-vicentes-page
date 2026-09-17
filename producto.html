@@ -7,8 +7,24 @@
   <meta name="description" content="Detalle de producto de Pizza Vicente">
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
 </head>
 <body>
+  <button id="menuToggle" class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteMenu">
+    <span></span><span></span><span></span>
+  </button>
+  <div id="menuOverlay" class="menu-overlay"></div>
+  <aside id="siteMenu" class="menu-drawer" aria-hidden="true">
+    <div class="menu-brand">Pizza Vicente</div>
+    <nav class="menu-nav" aria-label="Menú principal">
+      <a class="menu-link" href="index.html"><span>Inicio</span><span class="menu-arrow">›</span></a>
+      <a class="menu-link" href="index.html#tabs" aria-current="page"><span>Comidas</span><span class="menu-arrow">›</span></a>
+      <a class="menu-link" href="seguimiento.html"><span>Seguir pedido</span><span class="menu-arrow">›</span></a>
+      <a class="menu-link" href="#" data-menu-placeholder="Soporte"><span>Soporte</span><span class="menu-arrow">›</span></a>
+    </nav>
+    <p class="menu-footnote">Navegación V1. Las conexiones de cuenta, logística y soporte se incorporarán en las siguientes etapas.</p>
+  </aside>
+
   <main class="app-shell product-page">
     <section class="hero-gallery" aria-label="Galería del producto">
       <div id="heroTrack" class="hero-track"></div>
@@ -119,5 +135,6 @@
   <div id="toast" class="toast" role="status"></div>
 
   <script type="module" src="assets/js/product.js"></script>
+  <script type="module" src="assets/js/menu.js"></script>
 </body>
 </html>
